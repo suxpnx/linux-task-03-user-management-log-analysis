@@ -1,0 +1,62 @@
+LINUX TASK 03 — COMMAND LOG
+===========================
+
+Important: This is a prepared command sequence/template based on the task. Edit it to reflect exactly what you actually ran, including any changes or errors. Run account-management commands only in your authorized lab VM.
+
+PART 1 — Create user (administrator account)
+sudo useradd -m -s /bin/bash forensic01
+sudo usermod -aG sudo forensic01
+sudo passwd forensic01
+id forensic01
+getent passwd forensic01
+su - forensic01
+whoami
+pwd
+
+PART 2 — Logs (as forensic01)
+mkdir -p /home/forensic01/logs
+cd /home/forensic01/logs
+# Create sys_events.log using cat or the supplied create_mock_logs.sh script.
+wc -l sys_events.log
+grep "ERROR" sys_events.log
+grep -E "root|user01" sys_events.log
+grep "ERROR" sys_events.log | less
+grep -E "root|user01" sys_events.log | less
+grep "ERROR" sys_events.log > error_report.txt
+grep -E "root|user01" sys_events.log > root_user01_report.txt
+head -n 5 sys_events.log
+tail -n 5 sys_events.log
+cat sys_events.log
+cat error_report.txt
+cat root_user01_report.txt
+ls -l
+
+PART 3 — Permissions/ownership (as forensic01; sudo required for chown)
+cd /home/forensic01/logs
+touch confidential.txt
+chmod 600 confidential.txt
+ls -l confidential.txt
+sudo chown root:root confidential.txt
+ls -l confidential.txt
+cat confidential.txt
+echo "test entry" >> confidential.txt
+
+PART 4 — Temporary users (administrator account)
+sudo useradd -m -s /bin/bash guest1
+sudo useradd -m -s /bin/bash guest2
+sudo passwd guest1
+sudo passwd guest2
+sudo usermod -aG sudo guest1
+id guest1
+id guest2
+sudo userdel -r guest2
+getent passwd guest2
+
+GIT / GITHUB (run in Git Bash inside the extracted project directory)
+git init
+git add .
+git status
+git commit -m "Add Linux Task 03 practical workflow"
+git branch -M main
+git remote add origin https://github.com/YOUR-USERNAME/linux-task-03.git
+git push -u origin main

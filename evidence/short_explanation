@@ -1,0 +1,8 @@
+1. What grep, chown, and usermod Do
+grep: The grep command searches for specific words, patterns, or text within files. It helps users find important information quickly, such as searching for ERROR in a log file.
+
+chown: The chown command changes the ownership of a file or directory. It allows a system administrator to assign a file or directory to a different user or group.
+
+usermod: The usermod command modifies an existing user account in Linux. It can be used to change a user's group membership, login name, home directory, or other account settings.
+2. What I Learned from Trying to Access confidential.txt
+I learned that changing the ownership of a file affects who owns it, but it does not automatically guarantee that other users can access it. Access to confidential.txt depends on its file permissions and the user's privileges. Linux uses ownership and permissions to protect confidential information from unauthorized access.

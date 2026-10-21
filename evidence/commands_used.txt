@@ -1,0 +1,42 @@
+    1  clear
+    2  echo $SHELL
+    3  sudo cat /etc/passwd
+    4  clear
+    5  pwd
+    6  mkdir logs
+    7  ls
+    8  cd logs
+    9  pwd
+   10  ls
+   11  echo "2026-10-21 08:00:01 INFO [system] System startup initiated" > sys_events.log\necho "2026-10-21 08:00:05 INFO [root] Root user logged in" >> sys_events.log\necho "2026-10-21 08:01:12 INFO [user01] User login successful" >> sys_events.log\necho "2026-10-21 08:02:30 WARNING [system] High memory usage detected" >> sys_events.log\necho "2026-10-21 08:03:15 ERROR [auth] Failed login attempt for user01" >> sys_events.log\necho "2026-10-21 08:04:22 INFO [network] Network connection established" >> sys_events.log\necho "2026-10-21 08:05:10 WARNING [disk] Disk space running low" >> sys_events.log\necho "2026-10-21 08:06:45 ERROR [service] SSH service failed to start" >> sys_events.log\necho "2026-10-21 08:07:00 INFO [root] System configuration updated" >> sys_events.log\necho "2026-10-21 08:08:18 INFO [user01] File created successfully" >> sys_events.log\necho "2026-10-21 08:09:25 WARNING [security] Multiple failed login attempts detected" >> sys_events.log\necho "2026-10-21 08:10:40 ERROR [auth] Unauthorized access attempt detected" >> sys_events.log\necho "2026-10-21 08:11:05 INFO [system] Scheduled task started" >> sys_events.log\necho "2026-10-21 08:12:30 INFO [root] Package update completed" >> sys_events.log\necho "2026-10-21 08:13:14 WARNING [network] Network latency is high" >> sys_events.log\necho "2026-10-21 08:14:50 ERROR [application] Application crashed unexpectedly" >> sys_events.log\necho "2026-10-21 08:15:20 INFO [user01] User session started" >> sys_events.log\necho "2026-10-21 08:16:35 WARNING [system] CPU usage above threshold" >> sys_events.log\necho "2026-10-21 08:17:42 ERROR [file] Permission denied accessing protected file" >> sys_events.log\necho "2026-10-21 08:18:10 INFO [root] Security audit initiated" >> sys_events.log\necho "2026-10-21 08:19:55 INFO [system] Backup completed successfully" >> sys_events.log\necho "2026-10-21 08:20:30 WARNING [security] Suspicious activity detected" >> sys_events.log\necho "2026-10-21 08:21:45 ERROR [auth] Authentication service unavailable" >> sys_events.log\necho "2026-10-21 08:22:15 INFO [user01] User logged out" >> sys_events.log\necho "2026-10-21 08:23:00 INFO [system] System monitoring active" >> sys_events.log
+   12  ls
+   13  rm sys
+   14  rm sys_events.log
+   15  clear
+   16  cat > sys_events.log << 'EOF'\n2026-10-21 08:00:01 INFO [system] System startup initiated\n2026-10-21 08:00:05 INFO [root] Root user logged in\n2026-10-21 08:01:12 INFO [user01] User login successful\n2026-10-21 08:02:30 WARNING [system] High memory usage detected\n2026-10-21 08:03:15 ERROR [auth] Failed login attempt for user01\n2026-10-21 08:04:22 INFO [network] Network connection established\n2026-10-21 08:05:10 WARNING [disk] Disk space running low\n2026-10-21 08:06:45 ERROR [service] SSH service failed to start\n2026-10-21 08:07:00 INFO [root] System configuration updated\n2026-10-21 08:08:18 INFO [user01] File created successfully\n2026-10-21 08:09:25 WARNING [security] Multiple failed login attempts detected\n2026-10-21 08:10:40 ERROR [auth] Unauthorized access attempt detected\n2026-10-21 08:11:05 INFO [system] Scheduled task started\n2026-10-21 08:12:30 INFO [root] Package update completed\n2026-10-21 08:13:14 WARNING [network] Network latency is high\n2026-10-21 08:14:50 ERROR [application] Application crashed unexpectedly\n2026-10-21 08:15:20 INFO [user01] User session started\n2026-10-21 08:16:35 WARNING [system] CPU usage above threshold\n2026-10-21 08:17:42 ERROR [file] Permission denied accessing protected file\n2026-10-21 08:18:10 INFO [root] Security audit initiated\n2026-10-21 08:19:55 INFO [system] Backup completed successfully\n2026-10-21 08:20:30 WARNING [security] Suspicious activity detected\n2026-10-21 08:21:45 ERROR [auth] Authentication service unavailable\n2026-10-21 08:22:15 INFO [user01] User logged out\n2026-10-21 08:23:00 INFO [system] System monitoring active\nEOF
+   17  ls
+   18  cat sys_events.log
+   19  grep "ERROR" sys_events.log 
+   20  grep -E "root|user01" sys_events.log
+   21  grep "ERROR" sys_events.log | less
+   22  grep -E "root|user01" sys_events.log | less
+   23  grep "ERROR" sys_events.log | less > error_report.txt
+   24  ls
+   25  head -n5 sys_events.log
+   26  tail -n5 sys_events.log
+   27  cat sys_events.log
+   28  touch confidential.txt
+   29  ls -l confidential.txt
+   30  chmod 600 confidential.txt
+   31  ls -l confidential.txt
+   32  sudo chown root confidential.txt
+   33  ls -l confidential.txt
+   34  whoami
+   35  nano confidential.txt
+   36  sudo useradd guest1
+   37  sudo useradd guest2
+   38  sudo usermod -aG sudo guest1
+   39  sudo userdel -rf guest2
+   40  sudo userdel guest2
+   41  sudo cat /etc/passwd
+   42  history

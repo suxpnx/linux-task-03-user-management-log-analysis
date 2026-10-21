@@ -1,0 +1,6 @@
+2026-10-21 08:03:15 ERROR [auth] Failed login attempt for user01
+2026-10-21 08:06:45 ERROR [service] SSH service failed to start
+2026-10-21 08:10:40 ERROR [auth] Unauthorized access attempt detected
+2026-10-21 08:14:50 ERROR [application] Application crashed unexpectedly
+2026-10-21 08:17:42 ERROR [file] Permission denied accessing protected file
+2026-10-21 08:21:45 ERROR [auth] Authentication service unavailable
